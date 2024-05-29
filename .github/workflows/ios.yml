@@ -15,13 +15,5 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Ruby
-        uses: actions/setup-ruby@v1
-        with:
-          ruby-version: '2.6'
-
-      - name: Install Fastlane
-        run: brew install fastlane
-
       - name: Build and Test using Fastlane
         run: fastlane test
