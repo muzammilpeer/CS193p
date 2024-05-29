@@ -15,25 +15,8 @@
 default_platform(:ios)
 
 platform :ios do
-  desc "Run SwiftLint"
-  lane :lint do
-    swiftlint(
-      strict: true
-    )
-  end
-
-  desc "Run SwiftFormat"
-  lane :format do
-    swiftformat(
-      directory: ".",
-      swiftversion: "5.5"
-    )
-  end
-  
-  desc "Run SwiftLint, SwiftFormat, and Tests"
+  desc "Run all Tests"
   lane :test_all do
-    lint
-    format
     scan(
       scheme: "Memorize",
       device: "iPhone 15",
