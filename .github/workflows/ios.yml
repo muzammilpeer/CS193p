@@ -14,23 +14,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
       - name: Install SwiftLint
         run: brew install swiftlint
-
       - name: Install SwiftFormat
         run: brew install swiftformat
-
       - name: Run SwiftLint
         run: |
           cd Memorize
           swiftlint
-
       - name: Run SwiftFormat
         run: |
           cd Memorize
           swiftformat .
-		
       - name: Change directory to iOS project and run tests
         run: |
           cd Memorize
