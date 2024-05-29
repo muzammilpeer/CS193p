@@ -18,4 +18,4 @@ jobs:
       - name: Change directory to iOS project and run tests
         run: |
           cd Memorize
-          fastlane test
+          fastlane test_all

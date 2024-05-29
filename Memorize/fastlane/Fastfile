@@ -29,13 +29,14 @@ platform :ios do
       swiftversion: "5.5"
     )
   end
-  desc "Runs all the tests on the iOS simulator"
-  lane :test do
+  
+  desc "Run SwiftLint, SwiftFormat, and Tests"
+  lane :test_all do
     lint
     format
     scan(
       scheme: "Memorize",
-      device: "iPhone 15", # Specify the device to run the tests on
+      device: "iPhone 15",
       clean: true,
       code_coverage: true,
       output_directory: "./fastlane/test_output",
