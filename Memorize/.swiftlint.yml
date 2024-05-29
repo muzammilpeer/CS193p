@@ -1,0 +1,26 @@
+disabled_rules: # rule identifiers to exclude from running
+  - colon
+  - comma
+
+opt_in_rules: # some rules are only opt-in
+  - empty_count
+  - explicit_init
+
+included: # paths to include during linting. `--path` is ignored if present.
+  - Source
+
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+  - Carthage
+  - Pods
+
+line_length:
+  warning: 120
+  error: 150
+
+type_name:
+  min_length: 3
+  max_length: 40
+  excluded:
+    - id
+    - URL
+    - GlobalAPI

@@ -1,0 +1,6 @@
+--self insert
+--commas inline
+--binarygrouping 4,8
+--decimalgrouping 3,6
+--patternlet inline
+--stripunusedargs closure-only
