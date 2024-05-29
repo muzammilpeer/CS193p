@@ -1,31 +1,27 @@
-name: CI
+name: iOS starter workflow
 
 on:
   push:
-    branches:
-      - master
+    branches: [ "master" ]
   pull_request:
-    branches:
-      - master
+    branches: [ "master" ]
 
 jobs:
-  test:
+  build:
+    name: Build and Test Memorize scheme using any available iPhone simulator
     runs-on: self-hosted
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    - name: Set up Ruby
-      uses: ruby/setup-ruby@v1
-      with:
-        ruby-version: '2.6' # Match the Ruby version with your system
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '2.6'
 
-    - name: Install Fastlane
-      run: brew install fastlane
+      - name: Install Fastlane
+        run: brew install fastlane
 
-    - name: Install dependencies
-      run: bundle install
-
-    - name: Run tests on iOS simulator
-      run: fastlane test
+      - name: Build and Test using Fastlane
+        run: fastlane test
