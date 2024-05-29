@@ -47,6 +47,10 @@
 		7F26DBF02C07155700D32B76 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		7F26DBF12C0715B600D32B76 /* .swiftformat.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = .swiftformat.md; sourceTree = "<group>"; };
 		7F26DBF22C07170E00D32B76 /* .swift-version.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ".swift-version.md"; sourceTree = "<group>"; };
+		7F909C992C07386300EFF199 /* Appfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Appfile; sourceTree = "<group>"; };
+		7F909C9A2C07386300EFF199 /* Fastfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Fastfile; sourceTree = "<group>"; };
+		7F909C9B2C07386300EFF199 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		7F909C9C2C07386300EFF199 /* report.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = report.xml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,7 @@
 		7F26DBBA2C070E8F00D32B76 = {
 			isa = PBXGroup;
 			children = (
+				7F909C9D2C07386300EFF199 /* fastlane */,
 				7F26DBF22C07170E00D32B76 /* .swift-version.md */,
 				7F26DBF12C0715B600D32B76 /* .swiftformat.md */,
 				7F26DBF02C07155700D32B76 /* .swiftlint.yml */,
@@ -131,6 +136,17 @@
 				7F26DBE32C070E9000D32B76 /* MemorizeUITestsLaunchTests.swift */,
 			);
 			path = MemorizeUITests;
+			sourceTree = "<group>";
+		};
+		7F909C9D2C07386300EFF199 /* fastlane */ = {
+			isa = PBXGroup;
+			children = (
+				7F909C992C07386300EFF199 /* Appfile */,
+				7F909C9A2C07386300EFF199 /* Fastfile */,
+				7F909C9B2C07386300EFF199 /* README.md */,
+				7F909C9C2C07386300EFF199 /* report.xml */,
+			);
+			path = fastlane;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
