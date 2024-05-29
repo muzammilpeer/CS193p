@@ -19,12 +19,10 @@ jobs:
       - name: Install SwiftFormat
         run: brew install swiftformat
       - name: Run SwiftLint
-        run: |
-          cd Memorize
-          swiftlint
+        run: 
+          swiftlint 
       - name: Run SwiftFormat
-        run: |
-          cd Memorize
+        run: 
           swiftformat .
       - name: Change directory to iOS project and run tests
         run: |
