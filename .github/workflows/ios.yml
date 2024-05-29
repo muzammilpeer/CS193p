@@ -15,5 +15,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Build and Test using Fastlane
-        run: fastlane test
+      - name: Change directory to iOS project and run tests
+        run: |
+          cd Memorize
+          fastlane test
