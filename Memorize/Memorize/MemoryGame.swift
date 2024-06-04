@@ -7,9 +7,8 @@
 
 import Foundation
 
-
 struct MemoryGame<CardContent> {
-    private(set) var cards: Array<Card>
+    private(set) var cards: [Card]
 
     init(numberOfPairsOfCards: Int, cardContentFactory: (Int) -> CardContent) { // or Array<CardContent>
         self.cards = [] // [Card]()
@@ -23,8 +22,9 @@ struct MemoryGame<CardContent> {
 
     func choose(_ card: Card) {}
     mutating func shuffle() {
-        cards.shuffle()
+        self.cards.shuffle()
     }
+
     struct Card {
         var isFaceUp: Bool = true
         var isMatched: Bool = false
