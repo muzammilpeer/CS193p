@@ -14,6 +14,8 @@
 		7F26DBD82C070E9000D32B76 /* MemorizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F26DBD72C070E9000D32B76 /* MemorizeTests.swift */; };
 		7F26DBE22C070E9000D32B76 /* MemorizeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F26DBE12C070E9000D32B76 /* MemorizeUITests.swift */; };
 		7F26DBE42C070E9000D32B76 /* MemorizeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F26DBE32C070E9000D32B76 /* MemorizeUITestsLaunchTests.swift */; };
+		7FB480F52C0F9D27000C2035 /* MemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB480F42C0F9D27000C2035 /* MemoryGame.swift */; };
+		7FB480F72C0FA74B000C2035 /* EmojoMemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB480F62C0FA74B000C2035 /* EmojoMemoryGame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		7F909C9A2C07386300EFF199 /* Fastfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Fastfile; sourceTree = "<group>"; };
 		7F909C9B2C07386300EFF199 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7F909C9C2C07386300EFF199 /* report.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = report.xml; sourceTree = "<group>"; };
+		7FB480F42C0F9D27000C2035 /* MemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGame.swift; sourceTree = "<group>"; };
+		7FB480F62C0FA74B000C2035 /* EmojoMemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojoMemoryGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,8 @@
 		7F26DBC52C070E8F00D32B76 /* Memorize */ = {
 			isa = PBXGroup;
 			children = (
+				7FB480F42C0F9D27000C2035 /* MemoryGame.swift */,
+				7FB480F62C0FA74B000C2035 /* EmojoMemoryGame.swift */,
 				7F26DBC62C070E8F00D32B76 /* MemorizeApp.swift */,
 				7F26DBC82C070E8F00D32B76 /* ContentView.swift */,
 				7F26DBCA2C070E9000D32B76 /* Assets.xcassets */,
@@ -280,7 +286,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F26DBC92C070E8F00D32B76 /* ContentView.swift in Sources */,
+				7FB480F72C0FA74B000C2035 /* EmojoMemoryGame.swift in Sources */,
 				7F26DBC72C070E8F00D32B76 /* MemorizeApp.swift in Sources */,
+				7FB480F52C0F9D27000C2035 /* MemoryGame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
