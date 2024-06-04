@@ -7,25 +7,24 @@
 
 import SwiftUI
 
-//func createCardContent(forPairAtIndex index:Int) -> String {
+// func createCardContent(forPairAtIndex index:Int) -> String {
 //    return ["🎃", "👻", "🕸️", "🧛‍♂️", "🧙‍♀️", "😜", "🤡", "😂", "👽", "💀", "😈", "🤖", "👺", "👹", "🍬"][index]
-//}
-
+// }
 
 class EmojoMemoryGame {
     //    static vars and function initialized before instance variables or functions
     private static let emojis = ["🎃", "👻", "🕸️", "🧛‍♂️", "🧙‍♀️", "😜", "🤡", "😂", "👽", "💀", "😈", "🤖", "👺", "👹", "🍬"]
-    
+
     private static func createMemoryGame() -> MemoryGame<String> {
         return MemoryGame(numberOfPairsOfCards: 4) { pairIndex in
-            if emojis.indices.contains(pairIndex) {
-                return emojis[pairIndex]
-            }            else {
+            if self.emojis.indices.contains(pairIndex) {
+                return self.emojis[pairIndex]
+            } else {
                 return "🚦"
             }
         }
     }
-    
+
     //    function as type
     //    private var model = MemoryGame(numberOfPairsOfCards: 4, cardContentFactory: createCardContent)
     // clousre
@@ -42,14 +41,14 @@ class EmojoMemoryGame {
     //    private var model = MemoryGame(numberOfPairsOfCards: 4) { pairIndex in
     //        return emojis[pairIndex]
     //    }
-    
+
     private var model = createMemoryGame()
-    
-    var cards: Array<MemoryGame<String>.Card> {
-        return model.cards
+
+    var cards: [MemoryGame<String>.Card] {
+        return self.model.cards
     }
-    
-    func choose(_ card:MemoryGame<String>.Card) {
-        model.choose(card)
+
+    func choose(_ card: MemoryGame<String>.Card) {
+        self.model.choose(card)
     }
 }
