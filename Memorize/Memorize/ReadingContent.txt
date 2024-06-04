@@ -1,0 +1,61 @@
+
+// protocol Movable {
+//    func move(by: Int)
+//    var hasMoved:Bool  {get}
+//    var distanceFromStart:Int  {get set}
+// }
+//
+// struct PortableThing: Movable{
+//
+//    func move(by: Int) {
+//
+//    }
+//
+//    var hasMoved: Bool
+//
+//    var distanceFromStart: Int
+// }
+
+// struct Array<Element> where Element:Equatable
+// some vs any
+
+// function as types
+// (Int,Int) -> Bool
+// (Double) -> Void
+// () -> List<String>
+// () -> Void
+
+// var foo:(Double) -> Void
+// var doSomething(what ()->Bool)
+
+// var operation: (Double) -> Double
+// func square(operand:Double) -> Double
+//    return operand*operand
+//
+// operation = square
+// let result = operation(4)
+
+
+
+
+//    function as type
+//    private var model = MemoryGame(numberOfPairsOfCards: 4, cardContentFactory: createCardContent)
+// clousre
+//    private var model = MemoryGame(numberOfPairsOfCards: 4, cardContentFactory: {(index:Int) -> String in
+//        return ["🎃", "👻", "🕸️", "🧛‍♂️", "🧙‍♀️", "😜", "🤡", "😂", "👽", "💀", "😈", "🤖", "👺", "👹", "🍬"][index]
+//    }
+//    )
+//    clousure syntax wit type inferring
+//    private var model = MemoryGame(numberOfPairsOfCards: 4, cardContentFactory: { index in
+//        return ["🎃", "👻", "🕸️", "🧛‍♂️", "🧙‍♀️", "😜", "🤡", "😂", "👽", "💀", "😈", "🤖", "👺", "👹", "🍬"][index]
+//    }
+//    )
+// trailing clousre syntax , you can use $0,1,2 etc as well but its not readable
+//    private var model = MemoryGame(numberOfPairsOfCards: 4) { pairIndex in
+//        return emojis[pairIndex]
+//    }
+
+
+// func createCardContent(forPairAtIndex index:Int) -> String {
+//    return ["🎃", "👻", "🕸️", "🧛‍♂️", "🧙‍♀️", "😜", "🤡", "😂", "👽", "💀", "😈", "🤖", "👺", "👹", "🍬"][index]
+// }

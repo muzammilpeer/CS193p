@@ -7,43 +7,10 @@
 
 import Foundation
 
-// protocol Movable {
-//    func move(by: Int)
-//    var hasMoved:Bool  {get}
-//    var distanceFromStart:Int  {get set}
-// }
-//
-// struct PortableThing: Movable{
-//
-//    func move(by: Int) {
-//
-//    }
-//
-//    var hasMoved: Bool
-//
-//    var distanceFromStart: Int
-// }
-
-// struct Array<Element> where Element:Equatable
-// some vs any
-
-// function as types
-// (Int,Int) -> Bool
-// (Double) -> Void
-// () -> List<String>
-// () -> Void
-
-// var foo:(Double) -> Void
-// var doSomething(what ()->Bool)
-
-// var operation: (Double) -> Double
-// func square(operand:Double) -> Double
-//    return operand*operand
-//
-// operation = square
-// let result = operation(4)
 
 struct MemoryGame<CardContent> {
+    private(set) var cards: Array<Card>
+
     init(numberOfPairsOfCards: Int, cardContentFactory: (Int) -> CardContent) { // or Array<CardContent>
         self.cards = [] // [Card]()
         // add numberOfPairsOfCards x2 cards
@@ -54,11 +21,12 @@ struct MemoryGame<CardContent> {
         }
     }
 
-    private(set) var cards: [Card]
     func choose(_ card: Card) {}
-
+    mutating func shuffle() {
+        cards.shuffle()
+    }
     struct Card {
-        var isFaceUp: Bool = false
+        var isFaceUp: Bool = true
         var isMatched: Bool = false
         let content: CardContent
     }
