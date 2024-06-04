@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State var themeColor = Color.orange
-    
+
     let emojisList: [String] = ["🎃", "👻", "🕸️", "🧛‍♂️", "🧙‍♀️", "😜", "🤡", "😂", "👽", "💀", "😈", "🤖", "👺", "👹", "🍬"]
     @State var cardCount: Int = 4 // default load 4 items only
 
@@ -36,26 +36,25 @@ struct ContentView: View {
         HStack {
             self.cardCountAdjusterBy(offset: -1, symbol: "folder.fill.badge.minus")
             Spacer()
-            themSelector(color: .orange)
-            themSelector(color: .red)
-            themSelector(color: .green)
+            self.themSelector(color: .orange)
+            self.themSelector(color: .red)
+            self.themSelector(color: .green)
             Spacer()
             self.cardCountAdjusterBy(offset: +1, symbol: "folder.fill.badge.plus")
-            
         }
     }
 
     func themSelector(color: Color) -> some View {
         Button(action: {
-            themeColor = color
+            self.themeColor = color
         }, label: {
-            VStack{
+            VStack {
                 Image(systemName: "pencil.circle").tint(color)
                 Text(color.description).tint(color)
             }
         }).tint(self.themeColor)
     }
-    
+
     func cardCountAdjusterBy(offset: Int, symbol: String) -> some View {
         Button(action: {
             self.cardCount += offset
