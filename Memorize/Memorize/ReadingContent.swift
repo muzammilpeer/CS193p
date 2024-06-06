@@ -79,7 +79,7 @@
 //
 
 // Enums:
-//enum FastFoodMenuItem {
+// enum FastFoodMenuItem {
 //    case humburger(numberOfPatties: Int)
 //    case fries(size: FryOrderSize)
 //    case drink(String, ounces: Int) // the unnamed String in the brand, e.g "Coke"
@@ -92,26 +92,26 @@
 //        case .drink(_, ounces: let ounces): return ounces == 16
 //        }
 //    }
-//}
+// }
 //
-//enum FryOrderSize {
+// enum FryOrderSize {
 //    case large
 //    case small
-//}
+// }
 //
-//let menuItem: FastFoodMenuItem = .humburger(numberOfPatties: 2)
-//var otherItem: FastFoodMenuItem = .cookie
+// let menuItem: FastFoodMenuItem = .humburger(numberOfPatties: 2)
+// var otherItem: FastFoodMenuItem = .cookie
 
 // var yetAnotherItem = .cookie // swift can't figure this out type infering on both size not possible. only right side is allowed
 
 // enum can have function and computed properties inside it but not stored properties
 
-//enum TeslaModel: CaseIterable {
+// enum TeslaModel: CaseIterable {
 //    case X
 //    case S
 //    case Three
 //    case Y
-//}
+// }
 
 // TeslaModel.allCases
 
