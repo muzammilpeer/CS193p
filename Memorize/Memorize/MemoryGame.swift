@@ -18,6 +18,7 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
             self.cards.append(Card(content: content, id: "\(pairIndex + 1)a"))
             self.cards.append(Card(content: content, id: "\(pairIndex + 1)b"))
         }
+        self.cards.shuffle()
     }
 
     private func index(of card: Card) -> Int? {
@@ -29,43 +30,23 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
         return nil
     }
 
-    var lastUnknowLocation: Int?
+    var indexOfTheOneAndOnlyFaceUpCard: Int? {
+        get { self.cards.indices.filter { index in self.cards[index].isFaceUp }.only }
+        set { self.cards.indices.forEach { self.cards[$0].isFaceUp = (newValue == $0) } }
+    }
 
     mutating func choose(_ card: Card) {
-        // builtin array function
-//        if let chosenIndex = cards.firstIndex(of: card) {
-//            cards[chosenIndex].isFaceUp.toggle()
-//        }
-//        or
-//        if let chosenIndex = index(of: card){
-//            cards[chosenIndex].isFaceUp.toggle()
-//        }
-//        or use another builting where
-//        if let chosenIndex = cards.firstIndex(where: { cardToCheck in
-//            cardToCheck.id == card.id
-//        }){
-//            cards[chosenIndex].isFaceUp.toggle()
-//        }
         if let chosenIndex = cards.firstIndex(where: { $0.id == card.id }) {
             if !self.cards[chosenIndex].isFaceUp && !self.cards[chosenIndex].isMatched {
-                if let knownLocation = lastUnknowLocation, cards[chosenIndex].content == cards[knownLocation].content {
-                    self.cards[chosenIndex].isMatched = true
-                    self.cards[knownLocation].isMatched = true
-
-//                    cards[chosenIndex].isFaceUp = false
-                    self.cards[knownLocation].isFaceUp = false
-                    self.lastUnknowLocation = nil
-                } else {
-                    for index in self.cards.indices {
-                        self.cards[index].isFaceUp = false
+                if let potentialMatchIndex = indexOfTheOneAndOnlyFaceUpCard {
+                    if self.cards[chosenIndex].content == self.cards[potentialMatchIndex].content {
+                        self.cards[chosenIndex].isMatched = true
+                        self.cards[potentialMatchIndex].isMatched = true
                     }
-//                    if let knownLocation = lastUnknowLocation {
-//                        cards[knownLocation].isFaceUp = true
-//                    }
-                    self.lastUnknowLocation = chosenIndex
-                    self.cards[chosenIndex].isFaceUp = true
+                } else {
+                    self.indexOfTheOneAndOnlyFaceUpCard = chosenIndex
                 }
-                print("lastUnknowLocation:\(self.lastUnknowLocation), chosenIndex:\(chosenIndex)")
+                self.cards[chosenIndex].isFaceUp = true
             }
         }
     }
@@ -83,5 +64,11 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
         var debugDescription: String {
             "\(self.id): \(self.isFaceUp ? "up" : "down") \(self.isMatched ? "matched" : "not matched")"
         }
+    }
+}
+
+extension Array {
+    var only: Element? {
+        return count == 1 ? first : nil
     }
 }

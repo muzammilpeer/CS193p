@@ -9,10 +9,10 @@ import SwiftUI
 
 @main
 struct MemorizeApp: App {
-    @StateObject var game = EmojoMemoryGame()
+    @StateObject var game = EmojoMemoryGame(cardDatSet: gameDatSet.randomElement()!)
     var body: some Scene {
         WindowGroup {
-            EmojiMemoryGameView(viewModel: self.game, themeColor: .orange)
+            EmojiMemoryGameView(viewModel: self.game)
         }
     }
 }

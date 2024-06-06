@@ -9,16 +9,24 @@ import SwiftUI
 
 struct EmojiMemoryGameView: View {
     @ObservedObject var viewModel: EmojoMemoryGame
-    @State var themeColor: Color
+    var score: Int = 0
+    var buttonFont: Font = .title3
+    var titleFont: Font = .title
+    var subTitleFont: Font = .title2
 
-    init(viewModel: EmojoMemoryGame, themeColor: Color) {
+    var themeColor: Color
+    var themeAccentColor: Color
+
+    init(viewModel: EmojoMemoryGame) {
         self.viewModel = viewModel
-        self.themeColor = themeColor
-        self.viewModel.shuffle()
+        self.themeColor = viewModel.currentTheme.color
+        self.themeAccentColor = viewModel.currentTheme.accentColor
     }
 
     var body: some View {
         VStack {
+            Text("Memorize Game").font(self.titleFont).foregroundColor(self.themeAccentColor)
+            Text(self.viewModel.currentCardName).font(self.subTitleFont).foregroundColor(self.themeAccentColor)
             ScrollView {
                 self.cardsGrid.animation(.default, value: self.viewModel.cards)
             }
@@ -37,26 +45,27 @@ struct EmojiMemoryGameView: View {
     .foregroundColor(self.themeColor)
     }
 
-    func themSelector(color: Color) -> some View {
-        Button(action: {
-            self.themeColor = color
-        }, label: {
-            VStack {
-                Image(systemName: "pencil.circle").tint(color)
-                Text(color.description).tint(color)
-            }
-        }).tint(self.themeColor)
-    }
-
     var bottomButtons: some View {
         HStack {
-            Button("Shuffle") {
-                self.viewModel.shuffle()
-            }
+            Button(action: { self.viewModel.newGame() },
+                   label: {
+                       VStack(alignment: /*@START_MENU_TOKEN@*/ .center/*@END_MENU_TOKEN@*/, content: {
+                           Image(systemName: "plus.circle")
+                           Text("New Game")
+                       })
+                   }).tint(self.themeColor).font(self.buttonFont)
             Spacer()
-            self.themSelector(color: .orange)
-            self.themSelector(color: .red)
-            self.themSelector(color: .green)
+            VStack(alignment: /*@START_MENU_TOKEN@*/ .center/*@END_MENU_TOKEN@*/, content: {
+                Text("Score:\(self.score)").font(self.buttonFont).foregroundColor(self.themeAccentColor)
+            })
+            Spacer()
+            Button(action: { self.viewModel.shuffle() },
+                   label: {
+                       VStack(alignment: /*@START_MENU_TOKEN@*/ .center/*@END_MENU_TOKEN@*/, content: {
+                           Image(systemName: "shuffle.circle")
+                           Text("Shuffle")
+                       })
+                   }).tint(self.themeColor).font(self.buttonFont)
         }
     }
 }
@@ -77,5 +86,5 @@ struct CardView: View {
 }
 
 #Preview {
-    EmojiMemoryGameView(viewModel: EmojoMemoryGame(), themeColor: .orange)
+    EmojiMemoryGameView(viewModel: EmojoMemoryGame(cardDatSet: gameDatSet.randomElement()!))
 }

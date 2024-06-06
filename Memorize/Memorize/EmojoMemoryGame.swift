@@ -9,22 +9,36 @@ import SwiftUI
 
 class EmojoMemoryGame: ObservableObject {
     //    static vars and function initialized before instance variables or functions
-    private static let emojis = ["🎃", "👻", "🕸️", "🧛‍♂️", "🧙‍♀️", "😜", "🤡", "😂", "👽", "💀", "😈", "🤖", "👺", "👹", "🍬"]
-
-    private static func createMemoryGame() -> MemoryGame<String> {
-        return MemoryGame(numberOfPairsOfCards: self.emojis.count) { pairIndex in
-            if self.emojis.indices.contains(pairIndex) {
-                self.emojis[pairIndex]
+    class func createMemoryGame(emojis: [String]) -> MemoryGame<String> {
+        return MemoryGame(numberOfPairsOfCards: emojis.count) { pairIndex in
+            if emojis.indices.contains(pairIndex) {
+                emojis[pairIndex]
             } else {
                 "⁉️"
             }
         }
     }
 
-    @Published private var model = createMemoryGame()
+    init(cardDatSet: CardDataSet) {
+        self.model = EmojoMemoryGame.createMemoryGame(emojis: cardDatSet.dataset)
+        self.theme = cardDatSet.theme
+        self.cardName = cardDatSet.name
+    }
+
+    @Published private var model: MemoryGame<String>
+    @Published private var theme: ThemeSchema
+    @Published private var cardName: String
 
     var cards: [MemoryGame<String>.Card] {
         return self.model.cards
+    }
+
+    var currentTheme: ThemeSchema {
+        self.theme
+    }
+
+    var currentCardName: String {
+        self.cardName
     }
 
     // MARK: - Intents
@@ -36,5 +50,12 @@ class EmojoMemoryGame: ObservableObject {
 
     func choose(_ card: MemoryGame<String>.Card) {
         self.model.choose(card)
+    }
+
+    func newGame() {
+        let cardDatSet = gameDatSet.randomElement()!
+        self.model = EmojoMemoryGame.createMemoryGame(emojis: cardDatSet.dataset)
+        self.theme = cardDatSet.theme
+        self.cardName = cardDatSet.name
     }
 }
