@@ -12,7 +12,7 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
     var score = 0
 
     init(numberOfPairsOfCards: Int, cardContentFactory: (Int) -> CardContent) { // or Array<CardContent>
-        self.cards = [] 
+        self.cards = []
         // add numberOfPairsOfCards x2 cards
         for pairIndex in 0 ..< max(2, numberOfPairsOfCards) {
             let content = cardContentFactory(pairIndex)
