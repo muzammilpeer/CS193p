@@ -32,10 +32,11 @@ class EmojoMemoryGame: ObservableObject {
     var cards: [MemoryGame<String>.Card] {
         return self.model.cards
     }
+
     var score: Int {
         self.model.score
     }
-    
+
     var currentTheme: ThemeSchema {
         self.theme
     }
@@ -43,7 +44,7 @@ class EmojoMemoryGame: ObservableObject {
     var currentCardName: String {
         self.cardName
     }
-    
+
     // MARK: - Intents
 
     func shuffle() {
