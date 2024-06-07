@@ -9,6 +9,7 @@ import Foundation
 
 struct MemoryGame<CardContent> where CardContent: Equatable {
     private(set) var cards: [Card]
+    var score:Int=0
 
     init(numberOfPairsOfCards: Int, cardContentFactory: (Int) -> CardContent) { // or Array<CardContent>
         self.cards = [] // [Card]()
@@ -22,8 +23,8 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
     }
 
     private func index(of card: Card) -> Int? {
-        for index in self.cards.indices {
-            if self.cards[index].id == card.id {
+        for index in cards.indices {
+            if cards[index].id == card.id {
                 return index
             }
         }
@@ -31,22 +32,29 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
     }
 
     var indexOfTheOneAndOnlyFaceUpCard: Int? {
-        get { self.cards.indices.filter { index in self.cards[index].isFaceUp }.only }
-        set { self.cards.indices.forEach { self.cards[$0].isFaceUp = (newValue == $0) } }
+        get { cards.indices.filter { index in cards[index].isFaceUp }.only }
+        set { cards.indices.forEach { cards[$0].isFaceUp = (newValue == $0) } }
     }
 
     mutating func choose(_ card: Card) {
         if let chosenIndex = cards.firstIndex(where: { $0.id == card.id }) {
-            if !self.cards[chosenIndex].isFaceUp && !self.cards[chosenIndex].isMatched {
+            if !cards[chosenIndex].isFaceUp && !cards[chosenIndex].isMatched {
                 if let potentialMatchIndex = indexOfTheOneAndOnlyFaceUpCard {
-                    if self.cards[chosenIndex].content == self.cards[potentialMatchIndex].content {
-                        self.cards[chosenIndex].isMatched = true
-                        self.cards[potentialMatchIndex].isMatched = true
+                    cards[chosenIndex].flippedCount+=1
+                    cards[potentialMatchIndex].flippedCount+=1
+                    
+                    if cards[chosenIndex].content == cards[potentialMatchIndex].content {
+                        cards[chosenIndex].isMatched = true
+                        cards[potentialMatchIndex].isMatched = true
+                        score+=1
+                    }else if cards[chosenIndex].flippedCount > 1 || cards[potentialMatchIndex].flippedCount > 1 {
+                        score-=1
                     }
                 } else {
-                    self.indexOfTheOneAndOnlyFaceUpCard = chosenIndex
+                    indexOfTheOneAndOnlyFaceUpCard = chosenIndex
                 }
-                self.cards[chosenIndex].isFaceUp = true
+                cards[chosenIndex].isFaceUp = true
+                cards[chosenIndex].flippedCount+=1
             }
         }
     }
@@ -61,8 +69,9 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
         let content: CardContent
 
         var id: String
+        var flippedCount:Int=0
         var debugDescription: String {
-            "\(self.id): \(self.isFaceUp ? "up" : "down") \(self.isMatched ? "matched" : "not matched")"
+            "\(self.id): \(self.isFaceUp ? "up" : "down") \(self.isMatched ? "matched" : "not matched") flippedCount:\(flippedCount)"
         }
     }
 }

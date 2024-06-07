@@ -21,6 +21,7 @@ struct EmojiMemoryGameView: View {
         self.viewModel = viewModel
         self.themeColor = viewModel.currentTheme.color
         self.themeAccentColor = viewModel.currentTheme.accentColor
+        self.score = viewModel.score
     }
 
     var body: some View {
