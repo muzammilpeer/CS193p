@@ -12,8 +12,6 @@
 		7F26DBCB2C070E9000D32B76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F26DBCA2C070E9000D32B76 /* Assets.xcassets */; };
 		7F26DBCE2C070E9000D32B76 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F26DBCD2C070E9000D32B76 /* Preview Assets.xcassets */; };
 		7F26DBD82C070E9000D32B76 /* MemorizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F26DBD72C070E9000D32B76 /* MemorizeTests.swift */; };
-		7F26DBE22C070E9000D32B76 /* MemorizeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F26DBE12C070E9000D32B76 /* MemorizeUITests.swift */; };
-		7F26DBE42C070E9000D32B76 /* MemorizeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F26DBE32C070E9000D32B76 /* MemorizeUITestsLaunchTests.swift */; };
 		7FB480F52C0F9D27000C2035 /* MemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB480F42C0F9D27000C2035 /* MemoryGame.swift */; };
 		7FB480F72C0FA74B000C2035 /* EmojoMemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB480F62C0FA74B000C2035 /* EmojoMemoryGame.swift */; };
 		7FB480FA2C10591D000C2035 /* ReadingContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB480F92C10591D000C2035 /* ReadingContent.swift */; };
@@ -23,13 +21,6 @@
 
 /* Begin PBXContainerItemProxy section */
 		7F26DBD42C070E9000D32B76 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7F26DBBB2C070E8F00D32B76 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7F26DBC22C070E8F00D32B76;
-			remoteInfo = Memorize;
-		};
-		7F26DBDE2C070E9000D32B76 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7F26DBBB2C070E8F00D32B76 /* Project object */;
 			proxyType = 1;
@@ -46,7 +37,6 @@
 		7F26DBCD2C070E9000D32B76 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7F26DBD32C070E9000D32B76 /* MemorizeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemorizeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F26DBD72C070E9000D32B76 /* MemorizeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeTests.swift; sourceTree = "<group>"; };
-		7F26DBDD2C070E9000D32B76 /* MemorizeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemorizeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F26DBE12C070E9000D32B76 /* MemorizeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeUITests.swift; sourceTree = "<group>"; };
 		7F26DBE32C070E9000D32B76 /* MemorizeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		7F26DBF02C07155700D32B76 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -78,13 +68,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7F26DBDA2C070E9000D32B76 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -107,7 +90,6 @@
 			children = (
 				7F26DBC32C070E8F00D32B76 /* Memorize.app */,
 				7F26DBD32C070E9000D32B76 /* MemorizeTests.xctest */,
-				7F26DBDD2C070E9000D32B76 /* MemorizeUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -226,24 +208,6 @@
 			productReference = 7F26DBD32C070E9000D32B76 /* MemorizeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		7F26DBDC2C070E9000D32B76 /* MemorizeUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7F26DBED2C070E9000D32B76 /* Build configuration list for PBXNativeTarget "MemorizeUITests" */;
-			buildPhases = (
-				7F26DBD92C070E9000D32B76 /* Sources */,
-				7F26DBDA2C070E9000D32B76 /* Frameworks */,
-				7F26DBDB2C070E9000D32B76 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				7F26DBDF2C070E9000D32B76 /* PBXTargetDependency */,
-			);
-			name = MemorizeUITests;
-			productName = MemorizeUITests;
-			productReference = 7F26DBDD2C070E9000D32B76 /* MemorizeUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -258,10 +222,6 @@
 						CreatedOnToolsVersion = 15.4;
 					};
 					7F26DBD22C070E9000D32B76 = {
-						CreatedOnToolsVersion = 15.4;
-						TestTargetID = 7F26DBC22C070E8F00D32B76;
-					};
-					7F26DBDC2C070E9000D32B76 = {
 						CreatedOnToolsVersion = 15.4;
 						TestTargetID = 7F26DBC22C070E8F00D32B76;
 					};
@@ -282,7 +242,6 @@
 			targets = (
 				7F26DBC22C070E8F00D32B76 /* Memorize */,
 				7F26DBD22C070E9000D32B76 /* MemorizeTests */,
-				7F26DBDC2C070E9000D32B76 /* MemorizeUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -298,13 +257,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		7F26DBD12C070E9000D32B76 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7F26DBDB2C070E9000D32B76 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -336,15 +288,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7F26DBD92C070E9000D32B76 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7F26DBE42C070E9000D32B76 /* MemorizeUITestsLaunchTests.swift in Sources */,
-				7F26DBE22C070E9000D32B76 /* MemorizeUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -352,11 +295,6 @@
 			isa = PBXTargetDependency;
 			target = 7F26DBC22C070E8F00D32B76 /* Memorize */;
 			targetProxy = 7F26DBD42C070E9000D32B76 /* PBXContainerItemProxy */;
-		};
-		7F26DBDF2C070E9000D32B76 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7F26DBC22C070E8F00D32B76 /* Memorize */;
-			targetProxy = 7F26DBDE2C070E9000D32B76 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -576,40 +514,6 @@
 			};
 			name = Release;
 		};
-		7F26DBEE2C070E9000D32B76 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = uk.muzammilpeer.MemorizeUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Memorize;
-			};
-			name = Debug;
-		};
-		7F26DBEF2C070E9000D32B76 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = uk.muzammilpeer.MemorizeUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Memorize;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -636,15 +540,6 @@
 			buildConfigurations = (
 				7F26DBEB2C070E9000D32B76 /* Debug */,
 				7F26DBEC2C070E9000D32B76 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		7F26DBED2C070E9000D32B76 /* Build configuration list for PBXNativeTarget "MemorizeUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7F26DBEE2C070E9000D32B76 /* Debug */,
-				7F26DBEF2C070E9000D32B76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
