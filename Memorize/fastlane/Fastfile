@@ -11,7 +11,7 @@
 #
 
 # Uncomment the line if you want fastlane to automatically update itself
-# update_fastlane
+update_fastlane
 default_platform(:ios)
 
 platform :ios do
@@ -19,7 +19,7 @@ platform :ios do
   lane :test_all do
     scan(
       scheme: "Memorize",
-      device: "iPhone 15",
+      device: "iPhone 16",
       clean: true,
       code_coverage: true,
       output_directory: "./fastlane/test_output",
