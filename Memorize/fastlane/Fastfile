@@ -23,7 +23,8 @@ platform :ios do
       clean: true,
       code_coverage: true,
       output_directory: "./fastlane/test_output",
-      output_types: "junit"
+      output_types: "junit",
+      disable_concurrent_testing: true
     )
   end
 end
